@@ -19,6 +19,7 @@
         <h3 align="center"><a href="../Branch/ViewCardApplications.jsp">cards applications</a></h3>
         <h3 align="center"><a href="../Branch/BranchProfileView.jsp">view profile</a></h3>
         <h3 align="center"><a href="../Branch/BranchEditProfile.jsp">Edit profile</a></h3>
+        <h3 align="center"><a href="../Branch/BenificiaryRequests.jsp">Benifiary Requests</a></h3>
          
     </body>
 </html>

@@ -18,5 +18,8 @@
         <h3 align="center"><a href="../Customer/CustomerEditProfile.jsp">Edit profile</a></h3>
         <h3 align="center"><a href="../Customer/ChangePinNumber.jsp">change pin</a></h3>
         <h3 align="center"><a href="../Customer/BlockCard.jsp">Block Card</a></h3>
+        <h3 align="center"><a href="../Customer/BeneficiaryAdding.jsp">Beneficiary Adding</a></h3>
+        <h3 align="center"><a href="../Customer/Benificiaries.jsp">Beneficiaries</a></h3>
+        <h3 align="center"><a href="../Customer/FundTransfer.jsp">fund Transfer</a></h3>
     </body>
 </html>

@@ -19,7 +19,7 @@
          if(request.getParameter("btnsubmit")!=null)
             {
                 crd=request.getParameter("txtcd");
-                String selac="select * from tbl_issuedcards b inner join tbl_accounts d on b.accounts_id=d.accounts_id where issuedcards_number='"+crd+"'";
+                String selac="select * from tbl_issuedcards b inner join tbl_accounts d on b.accounts_id=d.accounts_id where issuedcards_number='"+crd+"' and issuedcards_status='issued'";
                  ResultSet selacc=obj.selectCommand(selac);
                 if(selacc.next())
                 {
