@@ -92,13 +92,15 @@
         {
             
            // update balance amount in tbl_accounts
-          String upbr="update tbl_accounts set accounts_balance='"+crbanceamt+"'where accounts_id='"+benf+"'";
+          String upbr="update tbl_accounts set accounts_balance='"+brbanceamt+"'where accounts_id='"+benf+"'";
             obj.executeCommand(upbr);  
             
         }
-         
+         %>
+         <script>alert("successflly Transfered");</script>
+        <%
         }
-    
+         
         }
         
         }
@@ -131,10 +133,9 @@
                     }
                     
                     %>
-                </td>
-                <td>
                     <input type="hidden" name="txtno" value="<%=trnsctionno%>">
                 </td>
+               
             </tr>   
             <tr>
                 <td>
@@ -174,7 +175,7 @@
             <select name="selben">
                 <option>...select...</option>
                 <%
-                String ben="select * from tbl_benificiaryadding br inner join tbl_accounts a on a.accounts_id=br.accounts_id inner join tbl_customerdetails cs on cs.Customer_id=a.Customer_id where br.Customer_id='"+session.getAttribute("cusid")+"'";
+                String ben="select * from tbl_benificiaryadding br inner join tbl_accounts a on a.accounts_id=br.accounts_id inner join tbl_customerdetails cs on cs.Customer_id=a.Customer_id where br.Customer_id='"+session.getAttribute("cusid")+"' and br.status='1'";
                 ResultSet rss=obj.selectCommand(ben);
                  while(rss.next())
                     {
