@@ -3,6 +3,7 @@
     Created on : 21 Feb, 2018, 2:52:39 PM
     Author     : HP
 --%>
+<%@page import="db.mailconnection"%>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="db.ConnectionClass" id="obj"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -96,7 +97,7 @@
          String acid="";
          String crdid="";
          String status="";
-         
+       
          if(request.getParameter("btnsubmit")!=null)
             {
             String sell="select * from tbl_cardapplications where cardapplications_id='"+request.getParameter("did")+"' ";
@@ -108,9 +109,47 @@
                     acid=rs.getString("accounts_id");
                     crdid=rs.getString("carddetails_id");          
             }
-             
+             String email="";
               String ins="insert into tbl_issuedcards(accounts_id,carddetails_id,issuedcards_number,issuedcards_pinnumber,issuedcards_status)values('"+acid+"','"+crdid+"','"+request.getParameter("CNNO")+"','"+request.getParameter("PINNO")+"','issued')";
-              obj.executeCommand(ins);  
+              boolean b=obj.executeCommand(ins);  
+              if(b)
+              {
+                  String sele="select cu.customer_email from tbl_issuedcards s inner join tbl_accounts ac on s.accounts_id=ac.accounts_id inner join tbl_customerdetails cu on cu.Customer_id=ac.Customer_id where ac.accounts_id='"+acid+"'";
+                  ResultSet rse=obj.selectCommand(sele);
+                  out.println(sele);
+                  if(rse.next())
+                  {
+                  email=rse.getString("Customer_email");
+                  }
+                  String to[]={email};
+                  String subject="card notification";
+                  String content="your debit/credit card will get by post within 2 week.your card number:"+request.getParameter("CNNO")+" and pin number :"+request.getParameter("PINNO");
+//                  mailconnection mc=new mailconnection();
+                  boolean bb=mailconnection.sendMail(to, subject, content);
+                  System.out.println(email+"email");
+                  System.out.println(to[0]+"to");
+                  System.out.println(subject+"subject");
+                  System.out.println(content+"content");
+                  if(bb)
+                  {
+                      %>
+                      <script>
+                          alert("Mail Send");
+                      </script>
+                      <%
+                  }
+                  
+                  %>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <%
+              }
+              
             }
         %>
         
@@ -127,6 +166,7 @@
             </tr>
             <tr>
                 <td>Account Number  :</td>
+                
                 <td><%=acno%></td>
             </tr>
             <tr>

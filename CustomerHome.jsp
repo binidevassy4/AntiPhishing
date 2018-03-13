@@ -21,5 +21,6 @@
         <h3 align="center"><a href="../Customer/BeneficiaryAdding.jsp">Beneficiary Adding</a></h3>
         <h3 align="center"><a href="../Customer/Benificiaries.jsp">Beneficiaries</a></h3>
         <h3 align="center"><a href="../Customer/FundTransfer.jsp">fund Transfer</a></h3>
+        <h3 align="center"><a href="../Customer/paybills.jsp">bill pay</a></h3>
     </body>
 </html>

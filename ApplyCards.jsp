@@ -29,6 +29,7 @@
             Dat=request.getParameter("txtdat");
            
          String sel1="select * from tbl_issuedcards where accounts_id='"+acno+"'";
+         System.out.println(sel1);
          ResultSet rsc=obj.selectCommand(sel1); 
          if(rsc.next())
          { 
@@ -42,9 +43,9 @@
          {
           
             String ins="insert into tbl_cardapplications(accounts_id,carddetails_id,status,card_date)values('"+acno+"','"+crdt+"','0','"+Dat+"')";
-            
-            ResultSet selbn=obj.selectCommand(ins);
-            if(selbn.next())
+            System.out.println(ins);
+            boolean b=obj.executeCommand(ins);
+            if(b==true)
         {
             response.sendRedirect("CustomerHome.jsp");
         }
