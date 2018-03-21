@@ -12,8 +12,18 @@
         <title>AntiPhishnig::RegistrationType</title>
     </head>
     <body>
-        <h3><a href="../Guest/Accountverification.jsp">Account Verification</a></h3>
-        <h3><a href="../Guest/Cardverification.jsp">Card Verification</a></h3>
-        
+        <br><br><br>
+        <br><br><br>
+        <table align="center" bgcolor="#FAFAFA" width="45%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+            <tr><td>
+                    <h2 align="center"><a href="../Guest/Accountverification.jsp">Account Verification</a></h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2 align="center"><a href="../Guest/Cardverification.jsp">Card Verification</a></h2>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>

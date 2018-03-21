@@ -15,18 +15,20 @@
     </head>
     <body>
         <form>
+            <br><br><br>
+            
         <table align="center" border="1">
             <tr>
                 <td>sl.no</td>
                 <td>Account number</td>
                 <td>Customer name</td>
-                <td>Card date</td>
+                <td>Application date</td>
                 <td>Card Type</td>
                 <td>Card details</td>
             </tr>
             <%
             int i=1;
-            String sel="select * from tbl_cardapplications c inner join tbl_accounts a on c.accounts_id=a.accounts_id inner join tbl_customerdetails cu on cu.Customer_id=a.Customer_id inner join tbl_carddetails crd on c.carddetails_id=crd.carddetails_id inner join tbl_cardtype ct on crd.cardtype_id=ct.cardtype_id  where branch_id='"+session.getAttribute("brid")+"'";
+            String sel="select * from tbl_cardapplications c inner join tbl_accounts a on c.accounts_id=a.accounts_id inner join tbl_customerdetails cu on cu.Customer_id=a.Customer_id inner join tbl_carddetails crd on c.carddetails_id=crd.carddetails_id inner join tbl_cardtype ct on crd.cardtype_id=ct.cardtype_id  where branch_id='"+session.getAttribute("brid")+"' and c.status=0";
             ResultSet rsc=obj.selectCommand(sel);
             while(rsc.next())
                  {
@@ -60,8 +62,12 @@
              
          
             {
-              String sell="select * from tbl_cardapplications c inner join tbl_accounts a on c.accounts_id=a.accounts_id inner join tbl_customerdetails cu on cu.Customer_id=a.Customer_id inner join tbl_carddetails crd on c.carddetails_id=crd.carddetails_id inner join tbl_cardtype ct on crd.cardtype_id=ct.cardtype_id where c.cardapplications_id='"+request.getParameter("hid")+"'";  
-                ResultSet rs=obj.selectCommand(sel);
+                session.setAttribute("crd", request.getParameter("did"));
+              //  out.println(session.getAttribute("crd"));
+                        
+                        
+              String sell="select * from tbl_cardapplications c inner join tbl_accounts a on c.accounts_id=a.accounts_id inner join tbl_customerdetails cu on cu.Customer_id=a.Customer_id inner join tbl_carddetails crd on c.carddetails_id=crd.carddetails_id inner join tbl_cardtype ct on crd.cardtype_id=ct.cardtype_id where c.cardapplications_id='"+session.getAttribute("crd")+"' and c.status=0";  
+                ResultSet rs=obj.selectCommand(sell);
                 if(rs.next())
                 
                 {
@@ -100,23 +106,27 @@
        
          if(request.getParameter("btnsubmit")!=null)
             {
-            String sell="select * from tbl_cardapplications where cardapplications_id='"+request.getParameter("did")+"' ";
-                ResultSet rs=obj.selectCommand(sel);
-                if(rs.next())
+               // out.println(session.getAttribute("crd")); 
+            String selle="select * from tbl_cardapplications where cardapplications_id='"+session.getAttribute("crd")+"'";
+                ResultSet rsr=obj.selectCommand(selle);
+                if(rsr.next())
                 
                 {
-                    
-                    acid=rs.getString("accounts_id");
-                    crdid=rs.getString("carddetails_id");          
+                 
+                    acid=rsr.getString("accounts_id");
+                   // out.println(acid);
+                    crdid=rsr.getString("carddetails_id");          
             }
              String email="";
               String ins="insert into tbl_issuedcards(accounts_id,carddetails_id,issuedcards_number,issuedcards_pinnumber,issuedcards_status)values('"+acid+"','"+crdid+"','"+request.getParameter("CNNO")+"','"+request.getParameter("PINNO")+"','issued')";
               boolean b=obj.executeCommand(ins);  
               if(b)
               {
+                  String ups="update tbl_cardapplications set status='1' where cardapplications_id='"+session.getAttribute("crd")+"'";
+                  obj.executeCommand(ups);
                   String sele="select cu.customer_email from tbl_issuedcards s inner join tbl_accounts ac on s.accounts_id=ac.accounts_id inner join tbl_customerdetails cu on cu.Customer_id=ac.Customer_id where ac.accounts_id='"+acid+"'";
                   ResultSet rse=obj.selectCommand(sele);
-                  out.println(sele);
+                  //out.println(sele);
                   if(rse.next())
                   {
                   email=rse.getString("Customer_email");

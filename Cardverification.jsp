@@ -39,7 +39,8 @@
             
         %>
         <form>
-            <table align=center" >
+            <br><br><br><br>
+            <table align="center" cellpadding="7" bgcolor="#FAFAFA" width="45%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" >
                 <tr>
                     <td>Enter your Card number</td>
                     <td><input type="number" name="txtcd"></td>

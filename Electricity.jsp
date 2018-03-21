@@ -1,6 +1,6 @@
 <%-- 
     Document   : Electricity
-    Created on : 1 Mar, 2018, 2:51:14 PM
+    Created on : 14 Mar, 2018, 10:10:29 PM
     Author     : HP
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>payment</h1>
     </body>
 </html>

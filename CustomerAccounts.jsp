@@ -26,10 +26,16 @@
         String Balance="";
         String CustName="";
         String AccType="";
+         Custno=request.getParameter("txtno");
+        Balance=request.getParameter("txtbal");
+        CustName=request.getParameter("selname");
+        AccType=request.getParameter("selacc");
+       
         
         if(request.getParameter("editid")!=null)
             {
                 hhid=request.getParameter("editid");
+               
                 String sel="select * from tbl_accounts where accounts_id='"+hhid+"' ";
                 ResultSet rse=obj.selectCommand(sel);
                 while(rse.next())
@@ -45,21 +51,19 @@
          
         if(request.getParameter("btnsubmit")!=null)
         {
-        Custno=request.getParameter("txtno");
-        Balance=request.getParameter("txtbal");
-        CustName=request.getParameter("selname");
-        AccType=request.getParameter("selacc");
         dd=request.getParameter("hid");
-        if(!dd.equals(""))
-       {
-       String upp="update tbl_accounts set accounts_no='"+custnum+"',accounts_balance='"+baln+"',Customer_id='"+cust+"',accounttype_id='"+acctype+"' where accounts_id='"+dd+"'";
-        obj.executeCommand(upp);
-       }
-       else
+        
+         if(!dd.equals(""))
+        {
+      String upp="update tbl_accounts set accounts_no='"+Custno+"',accounts_balance='"+Balance+"',Customer_id='"+CustName+"',accounttype_id='"+AccType+"' where accounts_id='"+dd+"'";
+       obj.executeCommand(upp);
+         }
+      else
        {
         
         String ins="insert into tbl_accounts(accounts_no,accounts_balance,Customer_id,accounttype_id)values('"+Custno+"','"+Balance+"','"+CustName+"','"+AccType+"')";
         obj.executeCommand(ins); 
+        
         }
         
        }

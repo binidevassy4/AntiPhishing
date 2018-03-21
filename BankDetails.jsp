@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Anti phishing::bank</title>
     </head>
     <body>
          <%
@@ -93,7 +93,7 @@
             %>
         
          <h1 align="center">Bank</h1>
-         <form name="frmbank">
+         <form id="contact" name="frmbank" onsubmit="return validateFormOnSubmit(this)" action="" method="post">
             
             <table align="center">
                 <tr>

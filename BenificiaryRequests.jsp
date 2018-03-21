@@ -39,13 +39,14 @@
                     <td>Account holder name</td>
                     <td>Email id</td>
                     <td>Contact no</td>
-                    <td>Account type</td>
+                    <td>Requested account holder</td>
                     <td>Account Blance</td>
+                    
                     
                 </tr>
                 <%
                 int i=1;
-                String sel="select * from tbl_benificiaryadding b inner join tbl_branch br on b.branch_id=br.branch_id inner join tbl_accounts a on b.accounts_id=a.accounts_id inner join tbl_customerdetails cs on a.Customer_id=cs.Customer_id inner join tbl_accounttype at on a.accounttype_id=at.accounttype_id where br.branch_id='"+session.getAttribute("brid")+"' and b.status=0";
+                String sel="select * from tbl_benificiaryadding b inner join tbl_customerdetails c on b.Customer_id=c.Customer_id inner join tbl_accounts a on b.accounts_id=a.accounts_id inner join tbl_customerdetails cd on a.Customer_id=cd.Customer_id where b.status=0 and c.branch_id='"+session.getAttribute("brid")+"'";
                 ResultSet rsc=obj.selectCommand(sel);
                 while(rsc.next())
                  {
@@ -55,10 +56,10 @@
              <tr>
                 <td><%=i%></td>
                 <td><%=rsc.getString("accounts_no")%></td>
-                <td><%=rsc.getString("Customer_name")%></td>
+                <td><%=rsc.getString("c.Customer_name")%></td>
                 <td><%=rsc.getString("Customer_email")%></td>
                 <td><%=rsc.getString("Customer_conact")%></td>
-                <td><%=rsc.getString("accounttype_name")%></td>
+                <td><%=rsc.getString("cd.Customer_name")%></td>
                 <td><%=rsc.getString("accounts_balance")%></td> 
                 <td><a href="BenificiaryRequests.jsp?aid=<%=id%>">Approve</a></td>
                 <td><a href="BenificiaryRequests.jsp?did=<%=id%>">Reject</a></td>
