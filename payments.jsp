@@ -1,6 +1,6 @@
 <%-- 
-    Document   : payaction
-    Created on : 12 Mar, 2018, 10:37:33 AM
+    Document   : payments
+    Created on : 13 Mar, 2018, 1:36:57 PM
     Author     : HP
 --%>
 <%@page import="java.util.Date"%>
@@ -11,10 +11,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>AntiPhishing::pay bills</title>
+        <title>JSP Page</title>
     </head>
-    <body>
-        <%
+    <%
             String amt = "";
             String category = "";
             String billno = "";
@@ -22,14 +21,32 @@
             String acc = "";
             int cramt;
 
-            if (request.getParameter("btnsubmit") != null)
-            {
-             session.setAttribute("billtype", request.getParameter("selcate"));
-             session.setAttribute("amount",request.getParameter("txtamt"));
-             session.setAttribute("bilno",request.getParameter("billno"));
-             //session.setAttribute("conno", request.getParameter("cusno"));
-             
-             response.sendRedirect("../Customer/payment/PaymentMethod.jsp");
+            if (request.getParameter("btnsubmit") != null) {
+
+                String ina = "select * from tbl_accounts where Customer_id='" + session.getAttribute("cusid") + "'";
+
+                ResultSet rsc = obj.selectCommand(ina);
+                if (rsc.next()) {
+                    acc = rsc.getString("accounts_balance");
+                }
+
+                amt = request.getParameter("txtamt");
+                category = request.getParameter("selcate");
+                billno = request.getParameter("billno");
+                dt = request.getParameter("txtdat");
+
+                int acc1 = Integer.parseInt(acc);
+                int amt1 = Integer.parseInt(amt);
+
+                String inb = "insert into tbl_paidbills(paidbills_amount,paidbills_number,account_id,billtype_id,paidbill_date)values('" + amt + "','" + billno + "','" + session.getAttribute("cusid") + "','" + category + "','" + dt + "')";
+                boolean b = obj.executeCommand(inb);
+                if (b == true) {
+
+                    cramt = acc1 - amt1;
+
+                    String upcr = "update tbl_accounts set accounts_balance='" + cramt + "'where Customer_id='" + session.getAttribute("cusid") + "'";
+                    obj.executeCommand(upcr);
+                }
             }
 
 
@@ -52,7 +69,6 @@
                                 }
 
                             %>  
-                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -71,7 +87,14 @@
                         <input type="text" name="billno" value="" >
                     </td>
                 </tr>
-                
+                <tr>
+                    <td>
+                        enter the consumer number :
+                    </td>
+                    <td>
+                        <input type="text" name="cusno" value="">
+                    </td>
+                </tr>
                 <%                    Date date = new Date();
                 %>
                 <input type="hidden" value="<%=date%>" name="txtdat">
@@ -83,6 +106,5 @@
                 </tr>
             </table>
         </form>
-               
     </body>
 </html>

@@ -1,19 +1,18 @@
 <%-- 
-    Document   : FundTransfer
-    Created on : 22 Feb, 2018, 6:40:43 PM
-    Author     : AkHiLeSh
+    Document   : Quic_pay
+    Created on : 18 Mar, 2018, 1:09:36 PM
+    Author     : HP
 --%>
-
 <%@page import="java.util.Date"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="obj" class="db.ConnectionClass"></jsp:useBean>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>AntiPhishing :: Fund Transfer</title>
-        <script src="jquery.js" type="text/javascript"></script>
+        <title>JSP Page</title>
+         <script src="jquery.js" type="text/javascript"></script>
         <script>
          function getbalance(a)
          
@@ -30,7 +29,7 @@
         </script>
     </head>
     <body>
-        <form>
+        
         <%
          String trnsno="";
          String dt="";
@@ -41,27 +40,45 @@
           String totamt="";
           int crbanceamt=0;
           int brbanceamt=0;
-          
+          String ifsc="";
+          String branch="";
+          String bacc="";
          ddlbalnceid=request.getParameter("ddlaccount");
-          benf=request.getParameter("selben");
+         // benf=request.getParameter("selben");
             amnt=request.getParameter("txtamt");
+            bacc=request.getParameter("txt_acc");
+            ifsc=request.getParameter("txt_ifsc");
+            branch=request.getParameter("txt_branch");
+            
         // Transfer account balance 
-         
+            
          String ina="select * from tbl_accounts where accounts_id='"+ddlbalnceid+"'";
          ResultSet rsc=obj.selectCommand(ina);
          if(rsc.next())
          {
           totamt=rsc.getString("accounts_balance");
+          //out.println(totamt);
          }
          
          
         if(request.getParameter("btnsubmit")!=null)
         {
-            
+         String seld="select * from tbl_accounts where accounts_no='"+bacc+"'";
+         ResultSet rscd=obj.selectCommand(seld);
+         if(rscd.next())
+         {
+          benf=rscd.getString("accounts_id");
+          //out.println(benf);
+         }    
+          String selbr="select * from tbl_branch b inner join tbl_customerdetails cu on cu.branch_id=b.branch_id inner join tbl_accounts a on a.Customer_id=cu.Customer_id where b.branch_ifsc='"+ifsc+"' and b.branch_name='"+branch+"' and a.accounts_no='"+bacc+"'";
+          ResultSet rsbr=obj.selectCommand(selbr);
+          if(rsbr.next())
+          {
+         dt=request.getParameter("txtdat");  
         trnsno=request.getParameter("txtno");
         dt=request.getParameter("txtdat");
       // insert details to tbl_transcation  
-        String in="insert into tbl_transaction(transaction_no,transaction_date)values('"+trnsno+"',curdate())";
+        String in="insert into tbl_transaction(transaction_no,transaction_date)values('"+trnsno+"','"+dt+"')";
         boolean b= obj.executeCommand(in);
         if(b==true)
         {
@@ -104,9 +121,11 @@
         }
         
         }
-        
+        } 
         %>
-        <table  align="center" cellpadding="7" bgcolor="#FAFAFA" width="45%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+        
+        <form>
+       <table  align="center" cellpadding="7" bgcolor="#FAFAFA" width="45%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
             <tr align="center">
                 <td>
                     Transaction no: 
@@ -136,7 +155,31 @@
                     <input type="hidden" name="txtno" value="<%=trnsctionno%>">
                 </td>
                
-            </tr>   
+            </tr> 
+            <tr align="center">
+                <td>
+                    Branch 
+                </td>
+                <td>
+                    <input type="text" name="txt_branch" value="">
+                </td>
+            </tr>
+            <tr align="center">
+                <td>
+                    IFSC code
+                </td>
+                <td>
+                    <input type="text" name="txt_ifsc" value="">
+                </td>
+            </tr>
+            <tr align="center">
+                <td>
+                    Account number
+                </td>
+                <td>
+                    <input type="text" name="txt_acc" value="">
+                </td>
+            </tr>
             <tr align="center">
                 <td>
                 Select your account:
@@ -168,30 +211,7 @@
                    
                 </td>
             </tr>
-            <tr align="center">
-                <td> Benificiary account : </td>
-                <td>
-           
-            <select name="selben">
-                <option>...select...</option>
-                <%
-                String ben="select * from tbl_benificiaryadding br inner join tbl_accounts a on a.accounts_id=br.accounts_id inner join tbl_customerdetails cs on cs.Customer_id=a.Customer_id where br.Customer_id='"+session.getAttribute("cusid")+"' and br.status='1'";
-                ResultSet rss=obj.selectCommand(ben);
-                 while(rss.next())
-                    {
-                       
-                    %>
-                    
-                    <option value="<%=rss.getString("accounts_id")%>"> <%=rss.getString("accounts_no")%> <%=rss.getString("Customer_name")%></option>
-                    <%
-                    
-                    }
-                    %>
-                <option></option>
-            </select>
-                </td>
-            </tr>
-            <tr align="center">
+             <tr align="center">
                 <td>
                     Transfer Amount:
                 </td>
@@ -210,11 +230,11 @@
                     </td>
                 </tr>
             <tr align="center">
-                <td colspan="2">
-                    <input type="submit" value="fund transfer" name="btnsubmit" >     
+                <td colspan="2" align="center">
+                    <input type="submit" name="btnsubmit" size="20" style="background-color:#81D4FA;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" value="Fund Transfer">
                 </td>
             </tr>
-        </table>
-        </form>
+       </table>
+        </form>          
     </body>
 </html>

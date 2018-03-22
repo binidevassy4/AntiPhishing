@@ -49,8 +49,8 @@
                 String ino = "insert into tbl_otp(otp_number) values('" + cno + "')";
                 boolean b = obj.executeCommand(ino);
                 if (b==true) {
-                    //out.println(email);
-                    //out.println(cno);
+                    out.println(email);
+                    out.println(cno);
                     String to[] = {email};
                     String subject = "card notification";
                     String content =String.valueOf(cno) ;
