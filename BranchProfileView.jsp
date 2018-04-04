@@ -3,6 +3,7 @@
     Created on : 22 Feb, 2018, 3:14:49 PM
     Author     : HP
 --%>
+<%@include file="Header.jsp" %>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="db.ConnectionClass" id="obj"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,10 +14,20 @@
         <title>AntiPhishing::Branch Profile</title>
     </head>
     <body>
-        <br><br>
-        <h1 align="center">Profile</h1>
+               
+             <div class="fbg">
+    <div class="fbg_resize">
+      
+        <h2><span>Profile</span> </h2>
+     
+    </div>
+ </div>
+        <div class="header">
+            <div class="header_resize">
+                <div class="menu_nav"> 
+               
         <form>       
-              <table align="center" border="2">
+              <table align="center" cellpadding="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
               <tr>
                    
                     <th>Branch name</th>
@@ -42,20 +53,25 @@
                  
                  <tr>
                    
-                    <td><%=rsd.getString("branch_name")%></td>
-                    <td><%=rsd.getString("branch_contactno")%></td>
-                    <td><%=rsd.getString("branch_email")%></td>
-                    <td><%=rsd.getString("branch_username")%></td>
-                    <td><%=rsd.getString("branch_address")%></td>
-                    <td><%=rsd.getString("palce_name")%></td>
-                    <td><%=rsd.getString("branch_pin")%></td>
-                    <td><%=rsd.getString("branch_ifsc")%></td>
+                    <td align="center"><%=rsd.getString("branch_name")%></td>
+                    <td align="center"><%=rsd.getString("branch_contactno")%></td>
+                    <td align="center"><%=rsd.getString("branch_email")%></td>
+                    <td align="center"><%=rsd.getString("branch_username")%></td>
+                    <td align="center"><%=rsd.getString("branch_address")%></td>
+                    <td align="center"><%=rsd.getString("palce_name")%></td>
+                    <td align="center"><%=rsd.getString("branch_pin")%></td>
+                    <td align="center"><%=rsd.getString("branch_ifsc")%></td>
                      </tr>
                     <%  
                     }
                     %>                     
           </table>    
          </form>
-          <h3 align="center"><a href="../Branch/BranchEditProfile.jsp">Edit</a></h3>
+          <h3 align="center"><a href="../Branch/BranchEditProfile.jsp"><h2>Edit</h2></a></h3>
+                </div>
+            </div>
+        </div>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <%@include file="Footer.jsp" %>     
     </body>
 </html>

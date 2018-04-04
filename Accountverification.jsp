@@ -3,7 +3,8 @@
     Created on : 21 Feb, 2018, 12:05:34 PM
     Author     : HP
 --%>
-<%@include file="Header.jsp" %>
+
+
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="db.ConnectionClass" id="obj"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,7 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>AntiPhishnig::Account verification</title>
-        
+
         <script type = "text/javascript" >
 
             function preventBack() {
@@ -45,22 +46,28 @@
                 }
 
             %>
-        <form>
-            <br><br><br><br>
-            <table align="center" cellpadding="7" bgcolor="#FAFAFA" width="45%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" >
-                <tr>
-                    <td>Enter your Account number</td>
-                    <td><input type="number" name="txtac"></td>
-                </tr>
+       
+                            <form>
+                                <table align="center" cellpadding="7" bgcolor="#FAFAFA" width="45%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" >
+                                    <tr>
+                                        <td>Enter your Account number</td>
+                                        <td><input type="number" name="txtac"></td>
+                                    </tr>
 
-                <tr>
-                    <td colspan="2" align="center">
-                        <input type="submit" name="btnsubmit" value="Submit">
-                        <input type="reset" name="btnreset" value="Cancel">
-                    </td>
-                </tr>
+                                    <tr>
+                                        <td colspan="2" align="center">
+                                            <input type="submit" name="btnsubmit" value="Submit">
+                                            <input type="reset" name="btnreset" value="Cancel">
+                                        </td>
+                                    </tr>
 
-            </table>
-        </form>
+                                </table>
+                            </form>
+                      
+                        
+             
     </body>
+    
+    
+   
 </html>

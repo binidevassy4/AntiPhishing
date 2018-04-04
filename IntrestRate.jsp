@@ -3,7 +3,7 @@
     Created on : 14 Feb, 2018, 2:20:53 PM
     Author     : HP
 --%>
-
+<%@include file="Header.jsp" %>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="db.ConnectionClass" id="obj"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -71,14 +71,23 @@
             
             }
         %>
-        <h1 align="center">InterstRate</h1>
+         <div class="fbg">
+            <div class="fbg_resize">
+
+                <h2><span>Interest</span>Details </h2>
+
+            </div>
+        </div>
         
+        <div class="header">
+            <div class="header_resize">
+                <div class="menu_nav">   
         
         <form>
             <table align="center">
                 <tr>
-                    <td>Account Type:</td>
-                    <td> <select name="seltype">
+                    
+                    <td> <select name="seltype" style="background-color:#fff; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                             <option>---select Account type---</option> 
                             <%
                             String type="select * from tbl_accounttype";
@@ -95,25 +104,26 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Interest Percentage</td>
-                    <td><input type="text" name="txtper" value="<%=Inper%>"</td>
+                   
+                    <td><input type="text" name="txtper" value="<%=Inper%>"  placeholder="     Interest Percentage"  size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                      <input type="hidden" name="hid" value="<%=hhid%>" >
                 </tr>
                  <tr>
                     <td colspan="2" align="center">
-                                    <input type="submit" name="btnsubmit" value="Submit">
-                                    <input type="reset" name="btnreset" value="Cancel">
+                                    <input type="submit" name="btnsubmit" value="Submit" size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <input type="reset" name="btnreset" value="Cancel" size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     </td>
                 </tr>
                 
             </table>
         </form>
+                <br><br>
        <form>
-        <table align="center" border="1">
+        <table align="center" cellspacing="12" bgcolor="#000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
                 <tr>
-                    <th> sl.no</th>
-                    <th>Account name</th>
-                    <th>interest percentage</th>
+                    <th > sl.no</th>
+                    <th > Account name</th>
+                    <th >interest percentage</th>
                 </tr>
             <tr>
                 <%
@@ -125,10 +135,10 @@
                         String districtid=rs.getString("interstrate_id");
                 %>  
                     
-                    <td><%=i%></td>
-                    <td><%=rs.getString("accounttype_name")%></td>
-                    <td><%=rs.getString("interstrate_percentage")%></td>
-                    <td><a href="IntrestRate.jsp?did=<%=districtid%>">Delete</a>
+                    <td align="center"><%=i%></td>
+                    <td align="center"><%=rs.getString("accounttype_name")%></td>
+                    <td align="center"><%=rs.getString("interstrate_percentage")%></td>
+                    <td align="center"><a href="IntrestRate.jsp?did=<%=districtid%>">Delete</a>
                         <a href="IntrestRate.jsp?editid=<%=districtid%>">Edit</a></td>
                     </tr>
                     <%
@@ -137,5 +147,10 @@
                     %>
             </table>
        </form>
+                </div>
+            </div>
+        </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+             <%@include file="Footer.jsp" %>   
     </body>
 </html>

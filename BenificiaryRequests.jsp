@@ -3,6 +3,7 @@
     Created on : 28 Feb, 2018, 11:53:45 AM
     Author     : HP
 --%>
+<%@include file="Header.jsp" %>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="db.ConnectionClass" id="obj"></jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
@@ -30,9 +31,20 @@
                 obj.executeCommand(del);
             }
         %>
-        <h1 align="center">Benificiary Requests</h1>
+          
+             <div class="fbg">
+    <div class="fbg_resize">
+      
+        <h2><span>Benificiary </span> Requests</h2>
+     
+    </div>
+ </div>
+        <div class="header">
+            <div class="header_resize">
+                <div class="menu_nav"> 
+       
         <form name="frmview">
-            <table align="center" border="1">
+            <table align="center" cellspacing="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
                 <tr>
                     <td>Sl.no</td>
                     <td>Account Number</td>
@@ -61,7 +73,7 @@
                 <td><%=rsc.getString("Customer_conact")%></td>
                 <td><%=rsc.getString("cd.Customer_name")%></td>
                 <td><%=rsc.getString("accounts_balance")%></td> 
-                <td><a href="BenificiaryRequests.jsp?aid=<%=id%>">Approve</a></td>
+                <td><a href="BenificiaryRequests.jsp?aid=<%=id%>">Approve</a></td>&nbsp;&nbsp;
                 <td><a href="BenificiaryRequests.jsp?did=<%=id%>">Reject</a></td>
              </tr>
             <%
@@ -71,5 +83,10 @@
                 
             </table>   
         </form>
+                </div>
+            </div>
+        </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+                            <%@include file="Footer.jsp" %>   
     </body>
 </html>

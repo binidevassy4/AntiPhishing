@@ -3,7 +3,7 @@
     Created on : 14 Feb, 2018, 2:31:34 PM
     Author     : HP
 --%>
-
+<%@include file="Header.jsp" %>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="db.ConnectionClass" id="obj"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -80,31 +80,37 @@
         %>
         
         
-        <h1 align="center">Accounts</h1>
+             <div class="fbg">
+    <div class="fbg_resize">
+      
+        <h2><span>Accounts </span> </h2>
+     
+    </div>
+ </div>
+        <div class="header">
+            <div class="header_resize">
+                <div class="menu_nav">  
+        
         <form name="frmaccounts">
-            <table align="center">
+            <table align="center" cellpadding="8">
                 <input type="hidden" name="hid" value="<%=hhid%>" >
                
                 <tr>
+                   
                     <td>
-                        Account Number:
-                    </td>
-                    <td>
-                        <input type="number" name="txtno" value="<%=custnum%>">
+                        <input type="number" name="txtno" value="<%=custnum%>" placeholder="        Account Number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     </td>
                 </tr>
                 <tr>
+                   
                     <td>
-                        Balance Amount:
-                    </td>
-                    <td>
-                        <input type="number" name="txtbal" value="<%=baln%>">
+                        <input type="number" name="txtbal" value="<%=baln%>" placeholder="        Balance Amount" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     </td>
                 </tr>
                 <tr>
-                    <td>Customer name  :</td>
+                    
                     <td>
-                            <select  name="selname" >
+                            <select  name="selname" style="background-color:#fff; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                                 <option>---select name---</option>
                        <%
                                 String dis="select * from tbl_customerdetails  where branch_id='"+session.getAttribute("brid")+"'";
@@ -122,9 +128,9 @@
                             </select>  </td>
                 </tr>
                 <tr>
-                    <td>Account Type :</td>
+                   
                     <td>
-                            <select  name="selacc" >
+                            <select  name="selacc" style="background-color:#fff; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                                 <option>---Account Type---</option>
                        <%
                                 String acty="select * from tbl_accounttype";
@@ -144,14 +150,15 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                                    <input type="submit" name="btnsubmit" value="Submit">
-                                    <input type="reset" name="btnreset" value="Cancel">
+                                    <input type="submit" name="btnsubmit" value="Submit"  size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <input type="reset" name="btnreset" value="Cancel"  size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                      </td>
                 </tr>
             </table>
         </form>
+                                <br><br>
         <form>
-            <table align="center" border="2">
+            <table align="center" cellpadding="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
                 <tr>
                     <td>Sl no</td>
                     <td>customer id</td>
@@ -189,5 +196,13 @@
             </table>   
             
         </form>
+        
+           
+                   
+                   
+                            <%@include file="Footer.jsp" %> 
+                </div>
+            </div>
+           </div>
     </body>
 </html>

@@ -3,7 +3,7 @@
     Created on : 13 Feb, 2018, 8:21:24 AM
     Author     : HP
 --%>
-
+<%@include file="Header.jsp" %>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="db.ConnectionClass" id="obj"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -73,25 +73,33 @@
              
              
         %>
-        
+         <div class="fbg">
+            <div class="fbg_resize">
+
+                <h2><span>Place</span></h2>
+
+            </div>
+        </div>
+        <div class="header">
+            <div class="header_resize">
+                <div class="menu_nav">
         
         
         
         
         <form name="frmplace">
                <input type="hidden"  value="<%=hidd%>" name="hid">
-                <table align="center">
+                <table align="center" cellspacing="8">
                     <tr>
-                        <td>Place Name</td>
-                        <td><input type="text"  name="txtplace" value="<%=PlaceName%>" placeholder="Enter Place " >  </tr>
+                        
+                        <td><input type="text"  name="txtplace" value="<%=PlaceName%>" placeholder="      Enter Place " size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">  </tr>
                      
-                    <br>
-                    <br>
+                    
                     <tr>
-                        <td>District Name</td>
+                       
                         
                         <td>
-                            <select  name="seldist" >
+                            <select  name="seldist" style="background-color:#fff; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                                 <option>---select district---</option>
                        <%
                                 String dis="select * from tbl_district";
@@ -111,17 +119,17 @@
                             
                         </td>
                     </tr>
-                            <tr><td colspan="2" align="center">
-                                    <input type="submit" name="btnsubmit" value="Submit">
-                                    <input type="reset" name="btnreset" value="Cancel">
+                            <tr><td colspan="2" >
+                                    <input type="submit" name="btnsubmit" value="Submit"  size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <input type="reset" name="btnreset" value="Cancel"  size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                                   </td>
                             </tr>
                 </table>
             </form>
+                            <br><br>                 
                             
                             
-                            
-           <table align="center" border="1">
+           <table align="center" bgcolor="#000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
                 <tr>
                     <th> sl.no</th>
                     <th>Place</th>
@@ -138,10 +146,10 @@
                         String districtid=rs.getString("palce_id");
                 %>  
                     <tr>
-                    <td><%=i%></td>
-                    <td><%=rs.getString("palce_name")%></td>
-                    <td><%=rs.getString("district_name")%></td>
-                    <td><a href="place.jsp?did=<%=districtid%>">Delete</a>
+                    <td align="center"><%=i%></td>
+                    <td align="center"><%=rs.getString("palce_name")%></td>
+                    <td align="center"><%=rs.getString("district_name")%></td>
+                    <td align="center"><a href="place.jsp?did=<%=districtid%>">Delete</a>
                     <a href="place.jsp?editplaceid=<%=districtid%>">Edit</a></td>
                     </tr>
                     <%
@@ -149,5 +157,10 @@
                     }
                     %>
             </table>
+                </div>
+            </div>
+        </div>
+            <br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <%@include file="Footer.jsp" %>  
     </body>
 </html>

@@ -3,6 +3,7 @@
     Created on : 2 Mar, 2018, 7:15:03 PM
     Author     : HP
 --%>
+<%@include file="Header.jsp" %>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean id="obj" class="db.ConnectionClass"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,9 +14,20 @@
         <title>AntiPhishing :: view Debit transfer</title>
     </head>
     <body>
-       <h1 align="center">Debit Transactions</h1>
+               
+             <div class="fbg">
+    <div class="fbg_resize">
+      
+        <h2><span>Debit </span> Transactions</h2>
+     
+    </div>
+ </div>
+        <div class="header">
+            <div class="header_resize">
+                <div class="menu_nav"> 
+       
         <form>       
-              <table align="center" border="1">
+              <table align="center"cellpadding="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
               <tr>
                    
                     <th>Account Number</th>
@@ -37,16 +49,21 @@
                  
                  <tr>
                    
-                    <td><%=rsd.getString("accounts_no")%></td>
-                    <td><%=rsd.getString("Customer_name")%></td>
-                    <td><%=rsd.getString("td_amount")%></td>
-                    <td><%=rsd.getString("transaction_date")%></td>
+                    <td align="center"><%=rsd.getString("accounts_no")%></td>
+                    <td align="center"><%=rsd.getString("Customer_name")%></td>
+                    <td align="center"><%=rsd.getString("td_amount")%></td>
+                    <td align="center"><%=rsd.getString("transaction_date")%></td>
                      </tr>
                     <%  
                     }
                     %>                     
           </table>    
          </form>
-          <h3 align="center"> <a href="../Branch/ViewFundTranssfer.jsp" >Back</a></h3>
+          <h3 align="center"> <a href="../Branch/ViewFundTranssfer.jsp" ><h2>Back</h2></a></h3>
+                </div>
+            </div>
+        </div>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <%@include file="Footer.jsp" %>     
     </body>
 </html>

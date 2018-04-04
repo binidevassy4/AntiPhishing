@@ -15,7 +15,7 @@
         <h1 align="center">Branch home</h1>
         <h3 align="center"><a href="../Branch/CustomerDetails.jsp">Add customers</a></h3>
         <h3 align="center"><a href="../Branch/CustomerAccounts.jsp">Add Accounts</a></h3>
-        <h3 align="center"><a href="../Branch/IssuvedCards.jsp">view cards</a></h3>
+       
         <h3 align="center"><a href="../Branch/ViewCardApplications.jsp">cards applications</a></h3>
         <h3 align="center"><a href="../Branch/BranchProfileView.jsp">view profile</a></h3>
         <h3 align="center"><a href="../Branch/BranchEditProfile.jsp">Edit profile</a></h3>

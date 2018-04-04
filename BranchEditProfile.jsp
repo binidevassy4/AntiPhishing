@@ -3,6 +3,7 @@
     Created on : 22 Feb, 2018, 3:15:06 PM
     Author     : HP
 --%>
+<%@include file="Header.jsp" %>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="db.ConnectionClass" id="obj"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -85,20 +86,26 @@
           
            
         %>
-        
-         <h1 align="center">Branch</h1>
-         
-         <br>       
-                
+             
+             <div class="fbg">
+    <div class="fbg_resize">
+      
+        <h2><span>Edit </span> Profile</h2>
+     
+    </div>
+ </div>
+        <div class="header">
+            <div class="header_resize">
+                <div class="menu_nav"> 
+               
          <form>       
-              <table align="center" border="2">
+              <table align="center" cellpadding="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
               <tr>
                    <th>sl.no</th>
                     <th>Branch name</th>
                     <th>Contact no</th>
                     <th>Email id</th>
-                    <th>User name</th>
-                    <th>Password</th>
+                   
                     <th>Address</th>
                     <th>Place</th>
                     <th>Pin no</th> 
@@ -117,16 +124,15 @@
                  
                  
                  <tr>
-                    <td><%=i%></td>
-                    <td><%=rsd.getString("branch_name")%></td>
-                    <td><%=rsd.getString("branch_contactno")%></td>
-                    <td><%=rsd.getString("branch_email")%></td>
-                    <td><%=rsd.getString("branch_username")%></td>
-                    <td><%=rsd.getString("branch_password")%></td>
-                    <td><%=rsd.getString("branch_address")%></td>
-                    <td><%=rsd.getString("palce_name")%></td>
-                    <td><%=rsd.getString("branch_pin")%></td>
-                    <td><%=rsd.getString("branch_ifsc")%></td>
+                    <td align="center"><%=i%></td>
+                    <td align="center"><%=rsd.getString("branch_name")%></td>
+                    <td align="center"><%=rsd.getString("branch_contactno")%></td>
+                    <td align="center"><%=rsd.getString("branch_email")%></td>
+                   
+                    <td align="center"><%=rsd.getString("branch_address")%></td>
+                    <td align="center"><%=rsd.getString("palce_name")%></td>
+                    <td align="center"><%=rsd.getString("branch_pin")%></td>
+                    <td align="center"><%=rsd.getString("branch_ifsc")%></td>
                     <td>
                     <a href=BranchEditProfile.jsp?editid=<%=id%>">Edit</a></td>
                     </tr>
@@ -137,37 +143,30 @@
          </form><br><br>
          <form name="frmbranch">
             
-            <table align="center">
+            <table align="center" cellpadding="8">
                 <tr>
-                    <td>Branch name:</td>
-                    <td><input type="text" name="txtname" value="<%=bnamee%>">
+                   
+                    <td><input type="text" name="txtname" value="<%=bnamee%>" placeholder="        Branch Name" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     <input type="hidden" name="hid" value="<%=hhid%>" >
                     </td>
                 </tr>
                 <tr>
-                    <td>Contact Number:</td>
-                    <td><input type="text" name="txtno" value="<%=conoo%>"></td>
+                    
+                    <td><input type="text" name="txtno" value="<%=conoo%>" placeholder="        Contact number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                 </tr>
                 <tr>
-                    <td>Email id:</td>
-                    <td><input type="email" name="txtemail" value="<%=emaill%>"></td>
+                    
+                    <td><input type="email" name="txtemail" value="<%=emaill%>" placeholder="        E-mail id" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                </tr>
+               
+                <tr>
+                    
+                    <td><input type="text" name="txtadd" value="<%=address%>" placeholder="       Address" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                 </tr>
                 <tr>
-                    <td>User name:</td>
-                    <td><input type="text" name="txtusername" value="<%=usnamee%>"></td>
-                </tr>
-                <tr>
-                    <td>Password:</td>
-                    <td><input type="password" name="txtpass" value="<%=passs%>"></td>
-                </tr>
-                <tr>
-                    <td>Address:</td>
-                    <td><input type="text" name="txtadd" value="<%=address%>"></td>
-                </tr>
-                <tr>
-                    <td>Place:</td>
+                   
                             <td>
-                                <select name="selplace">
+                                <select name="selplace" style="background-color:#fff; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                                     <option>---select place---</option>
                                     <%
                                         String selp="select * from tbl_place";
@@ -185,23 +184,27 @@
                             </td>
                 </tr>
                 <tr>
-                    <td>Pin no:</td>
-                    <td><input type="text" name="txtpin" value="<%=pinn%>"></td>
+                   
+                    <td><input type="text" name="txtpin" value="<%=pinn%>"  placeholder="       Address" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                 </tr>
                 <tr>
-                    <td>IFSC Code:</td>
-                    <td><input type="text" name="txtifsc" value="<%=ifscc%>"></td>
+                   
+                    <td><input type="text" name="txtifsc" value="<%=ifscc%>"  placeholder="       Address" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                 </tr>
                  <tr>
                     <td colspan="2" align="center">
-                                    <input type="submit" name="btnsubmit" value="Submit">
-                                    <input type="reset" name="btnreset" value="Cancel">
+                                    <input type="submit" name="btnsubmit" value="Submit"  size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <input type="reset" name="btnreset" value="Cancel"  size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     </td>
                   </tr>
                 
             </table>
          </form>
-             
+                </div>
+            </div>
+        </div>
+         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <%@include file="Footer.jsp" %>     
     </body>
 
 </html>

@@ -3,6 +3,7 @@
     Created on : 1 Feb, 2018, 1:59:14 PM
     Author     : HP
 --%>
+<%@include file="Header.jsp" %>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="db.ConnectionClass" id="obj"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -76,23 +77,33 @@
                 }
             }
             %>
-            
+          <div class="fbg">
+            <div class="fbg_resize">
+
+                <h2><span>District</span>Details </h2>
+
+            </div>
+        </div>
+        
+        <div class="header">
+            <div class="header_resize">
+                <div class="menu_nav">   
         <form name="frmDistrict">
                 <input type="hidden" value="<%=DistrictId%>" name="hid"  >
-                <table align="center">
+                <table align="center" cellspacing="8">
                     <tr>
-                        <td>DistrictName</td>
-                        <td><input type="text" value="<%=DistrictName%>" name="txtdistrict" placeholder="Enter District"></td>
+                        
+                        <td><input type="text" value="<%=DistrictName%>" name="txtdistrict" placeholder="      Enter District"  size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                     </tr>
                             <tr><td colspan="2" align="center">
-                                    <input type="submit" name="btnsubmit" value="Submit">
-                                    <input type="reset" name="btnreset" value="Cancel">
+                                    <input type="submit" name="btnsubmit" value="Submit"  size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <input type="reset" name="btnreset" value="Cancel"  size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                                   </td>
                             </tr>
                 </table>
             </form>
-          
-            <table align="center" border="1">
+                    <br><br>
+            <table align="center" cellspacing="12" bgcolor="#000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
                 <tr>
                     <th> sl.no</th>
                     <th>District</th>
@@ -109,9 +120,9 @@
                         String districtid=rs.getString("district_id");
                 %>  
                     <tr>
-                    <td><%=i%></td>
-                    <td><%=rs.getString("district_name")%></td>
-                    <td><a href="District.jsp?did=<%=districtid%>">Delete</a>
+                    <td align="center"><%=i%></td>
+                    <td align="center"><%=rs.getString("district_name")%></td>
+                    <td align="center"><a href="District.jsp?did=<%=districtid%>">Delete</a>&nbsp;&nbsp;
                         <a href="District.jsp?editdistid=<%=districtid%>">Edit</a></td>
                     </tr>
                     <%
@@ -119,5 +130,10 @@
                     }
                     %>
             </table>
+                </div>
+            </div>
+        </div>
+            <br><br> <br><br><br><br><br> <br><br><br><br><br> <br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <%@include file="Footer.jsp" %>
     </body>
 </html>

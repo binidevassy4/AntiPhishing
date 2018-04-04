@@ -27,7 +27,7 @@
         if(selbn.next())
         {
         session.setAttribute("bankid", selbn.getString("bank_id"));
-        response.sendRedirect("../Admin/HomePage.jsp");
+        response.sendRedirect("../Admin/Admin_home.jsp");
         }
         else
         {
@@ -37,7 +37,7 @@
         {
             session.setAttribute("brid", selbr.getString("branch_id"));
             
-           response.sendRedirect("../Branch/BrachHomepage.jsp");
+           response.sendRedirect("../Branch/Branch_home.jsp");
         }
         
             }

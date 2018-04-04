@@ -3,6 +3,7 @@
     Created on : 21 Feb, 2018, 2:52:39 PM
     Author     : HP
 --%>
+<%@include file="Header.jsp" %>
 <%@page import="db.mailconnection"%>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="db.ConnectionClass" id="obj"></jsp:useBean>
@@ -14,10 +15,23 @@
         <title>AntiPhishing::ViewCardApplications</title>
     </head>
     <body>
+        
+              
+    <div class="fbg">
+    <div class="fbg_resize">
+      
+        <h2><span>Card </span> Applications</h2>
+     
+    </div>
+ </div>
+        <div class="header">
+            <div class="header_resize">
+                <div class="menu_nav"> 
+               
         <form>
-            <br><br><br>
             
-        <table align="center" border="1">
+            
+        <table align="center" cellpadding="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
             <tr>
                 <td>sl.no</td>
                 <td>Account number</td>
@@ -168,7 +182,7 @@
       
         %>
         <br><br>
-        <table align="center" border="1">
+        <table align="center" cellpadding="8">
             <input type="hidden" value="<%=request.getParameter("did")%>" name="hid"  >
             <tr>
                 <td>Name  :</td>
@@ -202,11 +216,18 @@
                     <%=pin%></td>
             </tr>
             <tr><td colspan="2" align="center">
-                                    <input type="submit" name="btnsubmit" value="Submit">
-                                    <input type="reset" name="btnreset" value="cancel">
+                                    <input type="submit" name="btnsubmit" value="Submit" size="40" style="background-color:#fff;height:30px; width:100px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">&nbsp;&nbsp;
+                                    <input type="reset" name="btnreset" value="cancel" size="40" style="background-color:#fff;height:30px; width:100px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                 </td>
             </tr>
         </table>
             </form>
+                </div>
+            </div>
+        </div>
+            
+            
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <%@include file="Footer.jsp" %>     
     </body>
 </html>

@@ -1,9 +1,8 @@
 <%-- 
     Document   : Header
     Created on : 20 Mar, 2018, 2:00:55 PM
-    Author     : HP
+    Author     : BINI DEVASSY
 --%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -30,26 +29,29 @@
         </form>
       </div>
       <div class="logo">
-        <h1><a href="index.html">Secur<span>Anex</span> <small>Company Slogan Here</small></a></h1>
+        <h1><a href="index.html">Secur<span>Anex</span> <small>A Tradition of Trust</small></a></h1>
       </div>
       <div class="clr"></div>
       <div class="menu_nav">
         <ul>
-          <li class="active"><a href="index.html"><span>Home Page</span></a></li>
-          <li><a href="support.html"><span>Support</span></a></li>
-          <li><a href="about.html"><span>About Us</span></a></li>
-          <li><a href="blog.html"><span>Blog</span></a></li>
-          <li><a href="contact.html"><span>Contact Us</span></a></li>
+            <li><a href="Branch_home.jsp"><span>Home Page</span></a></li>
+          <li><a href="BranchProfileView.jsp"><span>Profile</span></a></li>
+          <li><a href="CustomerDetails.jsp"><span>Customers</span></a></li>
+         
+          <li><a href="CustomerAccounts.jsp"><span>Accounts</span></a></li>
         </ul>
       </div>
       <div class="clr"></div>
       <div class="slider">
-        <div id="coin-slider"> <a href="#"><img src="images/slide1.jpg" width="920" height="360" alt="" /><span><big>Sed condimentum justo sit amet urna ornare euismod.</big><br />
+        <div id="coin-slider"> <a href="#"><img src="images/s.jpg" width="920" height="360" alt="" /><span><big>Sed condimentum justo sit amet urna ornare euismod.</big><br />
           Tusce nec iaculis risus hasellus nec sem sed tellus malesuada porttitor. Mauris scelerisque feugiat ante in vulputate. Nam sit amet ullamcorper tortor. Phasellus posuere facilisis cursus. Nunc est lorem, dictum at scelerisque sit amet, faucibus et est. Proin mattis ipsum quis arcu aliquam molestie.</span></a> <a href="#"><img src="images/slide2.jpg" width="920" height="360" alt="" /><span><big>Amet urna ornare euismodSed condimentum.</big><br />
           Tusce nec iaculis risus hasellus nec sem sed tellus malesuada porttitor. Mauris scelerisque feugiat ante in vulputate. Nam sit amet ullamcorper tortor. Phasellus posuere facilisis cursus. Nunc est lorem, dictum at scelerisque sit amet, faucibus et est. Proin mattis ipsum quis arcu aliquam molestie.</span></a> <a href="#"><img src="images/slide3.jpg" width="920" height="360" alt="" /><span><big>Sed condimentum justo sit amet urna ornare euismod.</big><br />
           Tusce nec iaculis risus hasellus nec sem sed tellus malesuada porttitor. Mauris scelerisque feugiat ante in vulputate. Nam sit amet ullamcorper tortor. Phasellus posuere facilisis cursus. Nunc est lorem, dictum at scelerisque sit amet, faucibus et est. Proin mattis ipsum quis arcu aliquam molestie.</span></a> </div>
         <div class="clr"></div>
       </div>
-      <div class="clr"></div>
-    </div>
+      
   </div>
+
+  </div>
+</div>
+</body>
