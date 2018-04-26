@@ -8,7 +8,9 @@
 <%@include file="Header.jsp" %>
 <html>
     <head>
+      
         <title>AntiPhishing::Branch home</title>
+  
     </head>
 
 <body>
@@ -17,25 +19,27 @@
     <div class="content_resize">
       <div class="mainbar">
         <div class="article">
-          <h2><span>Excellent Solution</span> For Your Business</h2>
-          <p class="infopost">Posted <span class="date">on 11 sep 2018</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> &nbsp;&nbsp; <a href="#" class="com">Comments <span>11</span></a></p>
+          <h2><span>Excellent Solution</span> For Your Banking</h2>
+          <br>
           <div class="clr"></div>
-          <div class="img"><img src="images/img1.jpg" width="198" height="188" alt="" class="fl" /></div>
+          <div class="img"><img src="images/sm2.jpg" width="198" height="188" alt="" class="fl" /></div>
           <div class="post_content">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. <a href="#">Suspendisse bibendum. Cras id urna.</a> Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</p>
-            <p><strong>Aenean consequat porttitor adipiscing. Nam pellentesque justo ut tortor congue lobortis. Donec venenatis sagittis fringilla.</strong> Etiam nec libero magna, et dictum velit. Proin mauris mauris, mattis eu elementum eget, commodo in nulla. Mauris posuere venenatis pretium. Maecenas a dui sed lorem aliquam dictum. Nunc urna leo, imperdiet eu bibendum ac, pretium ac massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Quisque condimentum luctus ullamcorper.</p>
+            <p>Technology has touched every aspect of our lives. Right from the moment we wake up to the moment we go back to bed at night, technology surrounds us. Be it shopping for groceries, paying utility bills, learning to play a new instrument, finding a plumber, getting food delivered or anything else for that matter, technology offers a solution for almost everything we could possibly imagine.
+
+                Banking is definitely not a stranger to technology. Internet banking has made life simpler for millions and millions of people around the world. Especially in India, where a bank visit implies waiting in never-ending queues, online banking is definitely a blessing. Online banking has made it possible for customers to do simple tasks like accessing their savings account anytime, keep track of their account balance, get e-statements, pay bills online, shop online, transfer funds and much more in under a few clicks and within a matter of minutes.</p>
+            
             <p class="spec"><a href="#" class="rm">&raquo; Read more</a></p>
           </div>
           <div class="clr"></div>
         </div>
         <div class="article">
-          <h2><span>We'll Make Sure Template</span> Works For You</h2>
-          <p class="infopost">Posted <span class="date">on 29 aug 2016</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> &nbsp;&nbsp; <a href="#" class="com">Comments <span>7</span></a></p>
+          <h2><span>Online Banking</span> Works For You</h2>
+          <br>
           <div class="clr"></div>
-          <div class="img"><img src="images/img2.jpg" width="198" height="188" alt="" class="fl" /></div>
+          <div class="img"><img src="images/sm1.jpg" width="198" height="188" alt="" class="fl" /></div>
           <div class="post_content">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. <a href="#">Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</a> Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam.</p>
-            <p><strong>Aenean consequat porttitor adipiscing. Nam pellentesque justo ut tortor congue lobortis. Donec venenatis sagittis fringilla.</strong> Etiam nec libero magna, et dictum velit. Proin mauris mauris, mattis eu elementum eget, commodo in nulla. Mauris posuere venenatis pretium. Maecenas a dui sed lorem aliquam dictum. Nunc urna leo, imperdiet eu bibendum ac, pretium ac massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Quisque condimentum luctus ullamcorper.</p>
+            
+              <p>Online Banking, also known as net banking, e-banking or online banking, is the facility provided by banks and financial institutions which allows customers to use banking services via internet. There are scores of services like online money transfer, account opening, bill payment, tracking account activity, etc., which are made available to customers with the help of online banking. Online banking also allows banks to advertise their products and services in a manner that it reaches out millions of customers. However, in order to use online banking, an individual will require access to the internet, which is scarcely available in rural areas. Internet banking can also be accessed via mobile phones which have a data 3G/4G connection.</p>
             <p class="spec"><a href="#" class="rm">&raquo; Read more</a></p>
           </div>
           <div class="clr"></div>
@@ -45,7 +49,7 @@
       <div class="sidebar">
         
         <div class="gadget">
-          <h2 class="star"><span>Menu</span></h2>
+         
           <div class="clr"></div>
           <ul class="ex_menu">
               <li><a href="Branch_home.jsp"><h2>Home</h2></a><br />

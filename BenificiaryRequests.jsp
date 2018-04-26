@@ -44,15 +44,15 @@
                 <div class="menu_nav"> 
        
         <form name="frmview">
-            <table align="center" cellspacing="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+            <table align="center" cellpadding="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
                 <tr>
-                    <td>Sl.no</td>
-                    <td>Account Number</td>
-                    <td>Account holder name</td>
-                    <td>Email id</td>
-                    <td>Contact no</td>
-                    <td>Requested account holder</td>
-                    <td>Account Blance</td>
+                    <th>Sl.no</th>
+                    <th>Account Number</th>
+                    <th>Account holder name</th>
+                    <th>Email id</th>
+                    <th>Contact no</th>
+                    <th>Requested account holder</th>
+                    <th>Account Balance</th>
                     
                     
                 </tr>

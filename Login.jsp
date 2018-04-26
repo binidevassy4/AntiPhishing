@@ -10,6 +10,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+            <script type = "text/javascript" >
+
+            function preventBack() {
+                window.history.forward();
+            }
+
+            setTimeout("preventBack()", 0);
+
+            window.onunload = function() {
+                null
+            };
+        </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>AntiPhishing::login</title>
     </head>
@@ -45,18 +57,18 @@
         %>
         <h1 align="center">LOGIN</h1>
         <form name="frmlogin">
-            <table align="center" >
+            <table align="center" cellpadding="12" >
                 <tr>
-                <td>User name:</td>
-                <td><input type="text" name="txtuser" value=""></td>
+               
+                    <td><input type="text" name="txtuser" value="" placeholder="                         User Name" size="40" style="background-color:#fff;height:40px; width:400px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" ></td>
                 </tr>
                 <tr>
-                <td>Password:</td>
-                <td><input type="password" name="txtpass" value=""></td>
+                
+                    <td><input type="password" name="txtpass" value="" placeholder="                         Password" size="40" style="background-color:#fff;height:40px; width:400px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" ></td>
                 </tr>
-                <tr>
-                    <td><input type="submit" name="btnsubmit" value="submit"></td>
-                    <td><input type="reset" name="btnreset" value="reset"></td>   
+                <tr colspan="2">
+                    <td><input type="submit" name="btnsubmit" value="submit" size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                    <input type="reset" name="btnreset" value="reset" size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>   
                 </tr>
             </table>
         </form>

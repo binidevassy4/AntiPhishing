@@ -88,43 +88,50 @@
         
         
         %>
-        <h1 align="center"> Customer Details</h1>
+          <%@include file="Header.jsp" %>
+        <div class="content">
+            <div class="content_resize">
+                <div class="mainbar">
+                    <div class="article">
+                        <h2><span>Change </span> Your Profile</h2>
+                        <br /><br /><br />
+        
         
         <form nam="frmcustomerreg">
              <input type="hidden" name="hid" value="<%=hhid%>" >
-            <table align="center">
+            <table align="center" cellpadding="10">
                 <tr>
-                    <td>Name:</td>
-                    <td><input type="text" name="txtname" value="<%=name%>" required></td>
+                  
+                    <td><input type="text" name="txtname" value="<%=name%>" pattern="[a-z A-Z]{8,14}" title="should contain lowercase letters and uppercase letters ,atleast 8 characters" placeholder="             Enter your Name" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" required ></td>
                 </tr>
                 <tr>
-                    <td>Date of Birth</td>
-                    <td><input type="text" name="txtdob" value="<%=dob%>" required></td>
+                   
+                    <td><input type="text" name="txtdob" value="<%=dob%>"  placeholder="             Date of Birth" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" required></td>
                 </tr>
                 <tr>
-                    <td>Address :</td>
-                    <td><input type="text" name="txtadd" value="<%=add%>" required></td>
+                    
+                    <td><input type="text" name="txtadd" value="<%=add%>" pattern="[a-z A-Z]{15,30}" title="should contain lowercase letters and uppercase letters" placeholder="             Enter your Address" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" required></td>
                 </tr>
                 <tr>
-                    <td>Nationality :</td>
-                    <td><input type="text" name="txtnat" value="<%=nation%>" required></td>
+                    
+                    <td><input type="text" name="txtnat" value="<%=nation%>" pattern="[a-z A-Z 0-9]{5,8}" title="should contain lowercase letters and uppercase letters and digits" placeholder="             Enter your Nationality" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" required  ></td>
                 </tr>
                 <tr>
-                    <td>Pan no :</td>
-                    <td><input type="text" name="txtpan" value="<%=pan%>" required></td>
+                    
+                    <td><input type="text" name="txtpan" value="<%=pan%>" pattern="[0-9a-z]{6}" title="should containts lowercase letters and digits" placeholder="             Enter your Pan no " size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" required></td>
                 </tr>
                 <tr>
-                    <td>contact no :</td>
-                    <td><input type="number" name="txtcon" value="<%=con%>" required></td>
+                    
+                    <td><input type="number" name="txtcon" value="<%=con%>" pattern="[0-9]{8,10}" title="only containts digits" placeholder="             Enter your contact no" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" required></td>
                 </tr>
                 <tr>
-                    <td>Email  :</td>
-                    <td><input type="email" name="txtemail" value="<%=email%>" required></td>
+                   
+                    <td><input type="email" name="txtemail" value="<%=email%>"  placeholder="             Enter your Email-id  " size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" required></td>
                 </tr>
                 <tr>
-                    <td>district  :</td>
+                    
                     <td>
-                            <select  name="seldist" >
+                        <select  name="seldist" required="" style="background-color:#fff; height:50px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" >
                                 <option>---select district---</option>
                        <%
                                 String dis="select * from tbl_district";
@@ -145,26 +152,25 @@
                     
                 <tr>
                     <td colspan="2" align="center">
-                                    <input type="submit" name="btnsubmit" value="Submit">
-                                    <input type="reset" name="btnreset" value="Cancel">
+                                    <input type="submit" name="btnsubmit" value="Submit" size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">&nbsp;
+                                    <input type="reset" name="btnreset" value="Cancel" size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     </td>
                   </tr>
             </table>
         </form>
+                            <br /><br />
         <form>
-            <table align="center" border="1">
+            <table align="center" cellpadding="8" bgcolor="#fff" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
                 <tr>
-                    <td>Sl.no</td>
-                    <td>Name</td>
-                    <td>Date of Birth</td>
-                    <td>Address</td>
-                    <td>Nationality</td>
-                    <td>Pan No</td>
-                    <td>Contact No</td>
-                    <td>Email</td>
-                    <td>District</td>
-                </tr>
-                
+                   
+                    <th>Name</th>
+                    <th>DoB</th>
+                    <th>Address</th>
+                    <th>Nationality</th>
+                    <th>Pan No</th>
+                    <th>Contact No</th>
+                    <th>Email</th>
+                     <th>District</th>
                 <%
                 int i=1;
                 String sel="select * from tbl_customerdetails b inner join tbl_district d on b.district_id=d.district_id where Customer_id='"+session.getAttribute("cusid")+"'";
@@ -175,15 +181,15 @@
                   
                  %>
                   <tr>
-                    <td><%=i%></td>
-                    <td><%=rsd.getString("Customer_name")%></td>
-                    <td><%=rsd.getString("Customer_dob")%></td>
-                    <td><%=rsd.getString("Customer_address")%></td>
-                    <td><%=rsd.getString("Customer_nation")%></td>
-                    <td><%=rsd.getString("Customer_panno")%></td>
-                    <td><%=rsd.getString("Customer_conact")%></td>
-                    <td><%=rsd.getString("Customer_email")%></td>
-                    <td><%=rsd.getString("district_name")%></td>
+                   
+                    <td align="center"><%=rsd.getString("Customer_name")%></td>
+                    <td align="center"><%=rsd.getString("Customer_dob")%></td>
+                    <td align="center"><%=rsd.getString("Customer_address")%></td>
+                    <td align="center"><%=rsd.getString("Customer_nation")%></td>
+                    <td align="center"><%=rsd.getString("Customer_panno")%></td>
+                    <td align="center"><%=rsd.getString("Customer_conact")%></td>
+                    <td align="center"><%=rsd.getString("Customer_email")%></td>
+                    <td align="center"><%=rsd.getString("district_name")%></td>
                     <td>
                     <a href="CustomerEditProfile.jsp?editid=<%=id%>">Edit</a></td>
                     </tr>
@@ -194,6 +200,12 @@
                     
             </table>
         </form>
-        
+              </div>
+                </div>
+                <%@include file="Slider.jsp" %>  
+            </div>
+        </div>
+
+        <%@include file="Footer.jsp" %>   
     </body>
 </html>

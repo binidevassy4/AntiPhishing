@@ -33,12 +33,12 @@
             
         <table align="center" cellpadding="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
             <tr>
-                <td>sl.no</td>
-                <td>Account number</td>
-                <td>Customer name</td>
-                <td>Application date</td>
-                <td>Card Type</td>
-                <td>Card details</td>
+                <th>SL.N0</th>
+                <th>ACCOUNT NUMBER</th>
+                <th>CUSTOMER NAME</th>
+                <th>APPLICATION DATE</th>
+                <th>CARD TYPE</th>
+                <th>CARD DETAILS</th>
             </tr>
             <%
             int i=1;
@@ -50,13 +50,14 @@
                  
              %>
              <tr>
-                <td><%=i%></td>
-                <td><%=rsc.getString("accounts_no")%></td>
-                <td><%=rsc.getString("Customer_name")%></td>
-                <td><%=rsc.getString("card_date")%></td>
-                 <td><%=rsc.getString("cardtype_name")%></td>
-                <td><%=rsc.getString("carddetails_name")%></td>
-                <td><a href="ViewCardApplications.jsp?did=<%=id%>">Approve</a></td>
+                <td align="center"><%=i%></td>
+                <td align="center"><%=rsc.getString("accounts_no")%></td>
+                <td align="center"><%=rsc.getString("Customer_name")%></td>
+                <td align="center"><%=rsc.getString("card_date")%></td>
+                 <td align="center"><%=rsc.getString("cardtype_name")%></td>
+                <td align="center"><%=rsc.getString("carddetails_name")%></td>
+                <td align="center"><a href="ViewCardApplications.jsp?did=<%=id%>">Approve</a></td>
+                <td><a href="ViewCardApplications.jsp?ddid=<%=id%>">Reject</a></td>
              </tr>
             <%
             i++;
@@ -163,6 +164,7 @@
                       <%
                   }
                   
+                
                   %>
                   
                   
@@ -175,6 +177,17 @@
               }
               
             }
+         
+         
+           
+                   if(request.getParameter("ddid")!=null)
+            {
+
+              
+                String del="delete from tbl_cardapplications where cardapplications_id='"+request.getParameter("ddid")+"'";
+                obj.executeCommand(del);
+            }
+                  
         %>
         
         
@@ -227,7 +240,7 @@
         </div>
             
             
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                             <%@include file="Footer.jsp" %>     
     </body>
 </html>

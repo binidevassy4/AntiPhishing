@@ -47,18 +47,26 @@
             boolean b=obj.executeCommand(ins);
             if(b==true)
         {
-            response.sendRedirect("CustomerHome.jsp");
+            response.sendRedirect("customer_home.jsp");
         }
             }
            
          }
         %>
+                <%@include file="Header.jsp" %>
+        <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>Apply</span> Cards</h2>
+          <br /><br /><br />
+        
         <form>
-            <table align="center">
+            <table align="center" cellpadding="12">
                 <tr>
-                    <td>Account Number</td>
+                  
                     <td>
-                       <select name="selacc">
+                       <select name="selacc" style="background-color:#fff; height:50px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                             <option>---select Account number---</option>
                            <%
                                 String acty="select * from tbl_accounts where Customer_id='"+session.getAttribute("cusid")+"'";
@@ -79,9 +87,9 @@
                     </td>
                 </tr>
                <tr>
-                    <td>Cards Type:</td>
+                   
                     <td>
-                      <select  name="seltype" >
+                      <select  name="seltype" style="background-color:#fff; height:50px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" >
                                 <option>---select card types---</option>
                        <%
                                 String dis="select * from tbl_cardtype p inner join tbl_carddetails d on p.cardtype_id=d.cardtype_id";
@@ -110,11 +118,19 @@
                     </td>
                 </tr>
                 <tr><td colspan="2" align="center">
-                                    <input type="submit" name="btnsubmit" value="Apply now">
+                                    <input type="submit" name="btnsubmit" value="Apply now" size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                                     
                       </td>
                  </tr>
             </table>
         </form>
+                           
+        </div>
+      </div>
+             <%@include file="Slider.jsp" %>  
+    </div>
+        </div>
+            
+             <%@include file="Footer.jsp" %>  
     </body>
 </html>

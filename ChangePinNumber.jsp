@@ -35,7 +35,16 @@
             
             }
         %>
-        <h1 align="center">Change Pin</h1>
+        <%@include file="Header.jsp" %>
+        <div class="content">
+            <div class="content_resize">
+                <div class="mainbar">
+                    <div class="article">
+                        <h2><span>Change </span> Your Pin Number</h2>
+                        <br /><br /><br />
+
+        
+        
         <form name="frmchangepin">
             <table align="center">
                 <tr>

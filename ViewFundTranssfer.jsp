@@ -44,17 +44,17 @@
                
         
        
-        <table align="center" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+        <table align="center" cellpadding="15" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
             <tr>
                 <td align="center">
-                   Credit <input type="radio" name="transfer" value="credit" id="credit" >
+                    Credit <input type="radio" name="transfer" value="credit" id="credit" > &nbsp;&nbsp;&nbsp;
                    Debit <input type="radio" name="transfer" value="debit" id="debit">
                     
                 </td>
             </tr>  
             <tr>
-                <td>
-                    <input type="submit" name="btnsubmit" value="submit" onclick="checktype()">
+                <td align="center">
+                    <input type="submit" name="btnsubmit" value="submit" onclick="checktype()" size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                 </td>
             </tr>
         </table>

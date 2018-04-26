@@ -104,7 +104,7 @@
                             </tr>
                             <tr>
 
-                                <td  align="center"><input type="text" name="txtno" value="<%=conoo%>" placeholder="        Contact Number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                                <td  align="center"><input type="text" required="" pattern="[0-9]{8,10}" name="txtno" value="<%=conoo%>" placeholder="          Contact Number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                             </tr>
                             <tr>
 

@@ -100,27 +100,27 @@
                         <table align="center" cellpadding="8">
                             <tr>
                                 
-                                <td><input type="text" name="txtname" value="<%=name%>" required  placeholder="        Customer Name" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                                <td><input type="text" name="txtname" value="<%=name%>" required="" pattern="[a-z A-Z]{8,15}"  placeholder="        Customer Name" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                             </tr>
                             <tr>
                                
-                                <td><input type="text" name="txtdob" value="<%=dob%>" required  placeholder="        Date of Birth" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                                <td><input type="date" name="txtdob" value="<%=dob%>" required=""  placeholder="        Date of Birth" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                             </tr>
                             <tr>
                                 
-                                <td><input type="text" name="txtadd" value="<%=add%>" required  placeholder="       Address" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                                <td><input type="text" name="txtadd" value="<%=add%>" required pattern="[a-z A-Z 0-9]{15,30}" placeholder="       Address" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                             </tr>
                             <tr>
                                 
-                                <td><input type="text" name="txtnat" value="<%=nation%>" required  placeholder="        Nationality" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                                <td><input type="text" name="txtnat" value="<%=nation%>" required pattern="[a-zA-Z]{5,10}" placeholder="        Nationality" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                             </tr>
                             <tr>
                                
-                                <td><input type="text" name="txtpan" value="<%=pan%>" required  placeholder="        Pan Number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                                <td><input type="text" name="txtpan" value="<%=pan%>" required pattern="[a-zA-Z0-9]{10}" placeholder="        Pan Number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                             </tr>
                             <tr>
                                 
-                                <td><input type="number" name="txtcon" value="<%=con%>" required  placeholder="        Contact Number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                                <td><input type="number" name="txtcon" value="<%=con%>" required pattern="[0-9]{8,10}" placeholder="        Contact Number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                             </tr>
                             <tr>
                               
@@ -129,7 +129,7 @@
                             <tr>
                                
                                 <td>
-                                    <select  name="seldist" style="background-color:#fff; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" >
+                                    <select  name="seldist" required="" style="background-color:#fff;height: 30px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" >
                                         <option>---select district---</option>
                                         <%
                                             String dis = "select * from tbl_district";
@@ -157,17 +157,17 @@
                     </form>
                                     <br><br>
                     <form>
-                        <table align="center" cellpadding="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+                        <table align="center" cellpadding="12" bgcolor="#00000"  style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
                             <tr>
-                                <td >Sl.no</td>
-                                <td >Name</td>
-                                <td>Date of Birth</td>
-                                <td>Address</td>
-                                <td>Nationality</td>
-                                <td>Pan No</td>
-                                <td>Contact No</td>
-                                <td>Email</td>
-                                <td>District</td>
+                                <td >SL.NO</td>
+                                <td >NAME</td>
+                                <td>DOB</td>
+                                <td>ADDRESS</td>
+                                <td>NATIONALITY</td>
+                                <td>PAN NO</td>
+                                <td>CONTACT NO</td>
+                                <td>E-MAIL</td>
+                                <td>DISTRICT</td>
                             </tr>
 
                             <%                    int i = 1;
@@ -201,6 +201,7 @@
             </div>
         </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <%@include file="Footer.jsp" %>   
     </body>
 </html>

@@ -98,19 +98,19 @@
                 <tr>
                    
                     <td>
-                        <input type="number" name="txtno" value="<%=custnum%>" placeholder="        Account Number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                        <input type="number" name="txtno" value="<%=custnum%>" required="" pattern="[0-9]{10}" placeholder="        Account Number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     </td>
                 </tr>
                 <tr>
                    
                     <td>
-                        <input type="number" name="txtbal" value="<%=baln%>" placeholder="        Balance Amount" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                        <input type="number" name="txtbal" value="<%=baln%>" required="" pattern="[0-9]{3,7}" placeholder="        Balance Amount" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     </td>
                 </tr>
                 <tr>
                     
                     <td>
-                            <select  name="selname" style="background-color:#fff; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                        <select  name="selname" required="" style="background-color:#fff;height: 30px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                                 <option>---select name---</option>
                        <%
                                 String dis="select * from tbl_customerdetails  where branch_id='"+session.getAttribute("brid")+"'";
@@ -130,7 +130,7 @@
                 <tr>
                    
                     <td>
-                            <select  name="selacc" style="background-color:#fff; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                        <select  name="selacc" required="" style="background-color:#fff;height: 30px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                                 <option>---Account Type---</option>
                        <%
                                 String acty="select * from tbl_accounttype";
@@ -160,12 +160,12 @@
         <form>
             <table align="center" cellpadding="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
                 <tr>
-                    <td>Sl no</td>
-                    <td>customer id</td>
-                    <td>Account number</td>
-                    <td>customer name</td>
-                    <td>Balance</td>
-                    <td>Account type</td>
+                    <td>SL.NO</td>
+                    
+                    <td>ACCOUNT NUMBER</td>
+                    <td>CUSTOMER NAME</td>
+                    <td>BALANCE</td>
+                    <td>ACCOUNT TYPE</td>
                 </tr>
                 <%
                 int i=1;
@@ -178,12 +178,12 @@
                 %>
                 <tr>
                     <td><%=i%></td>
-                     <td><%=rsn.getString("Customer_id")%></td>
+                    
                     <td><%=rsn.getString("accounts_no")%></td>
                     <td><%=rsn.getString("Customer_name")%></td>
                     <td><%=rsn.getString("accounts_balance")%></td> 
                     <td><%=rsn.getString("accounttype_name")%></td>
-                    <td><a href="CustomerAccounts.jsp?did=<%=id%>">Delete</a>
+                    <td><a href="CustomerAccounts.jsp?did=<%=id%>">Delete</a> &nbsp;&nbsp;
                     <a href="CustomerAccounts.jsp?editid=<%=id%>">Edit</a></td>
                 </tr>   
                    <%
@@ -197,12 +197,12 @@
             
         </form>
         
-           
-                   
-                   
-                            <%@include file="Footer.jsp" %> 
                 </div>
             </div>
-           </div>
+        </div>
+                   
+             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> <br /><br /><br /><br /> <br /><br /> <br /><br /><br /><br />                                       
+                            <%@include file="Footer.jsp" %> 
+           
     </body>
 </html>

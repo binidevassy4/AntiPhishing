@@ -34,19 +34,17 @@
       <div class="clr"></div>
       <div class="menu_nav">
         <ul>
-            <li><a href="Branch_home.jsp"><span>Home Page</span></a></li>
-          <li><a href="BranchProfileView.jsp"><span>Profile</span></a></li>
-          <li><a href="CustomerDetails.jsp"><span>Customers</span></a></li>
+            <li><a href="customer_home.jsp"><span>Home Page</span></a></li>
          
-          <li><a href="CustomerAccounts.jsp"><span>Accounts</span></a></li>
+         
+            <li><a href="../Guest/Log_out.jsp"><span>Log out</span></a></li>
         </ul>
       </div>
       <div class="clr"></div>
       <div class="slider">
-        <div id="coin-slider"> <a href="#"><img src="images/s.jpg" width="920" height="360" alt="" /><span><big>Sed condimentum justo sit amet urna ornare euismod.</big><br />
-          Tusce nec iaculis risus hasellus nec sem sed tellus malesuada porttitor. Mauris scelerisque feugiat ante in vulputate. Nam sit amet ullamcorper tortor. Phasellus posuere facilisis cursus. Nunc est lorem, dictum at scelerisque sit amet, faucibus et est. Proin mattis ipsum quis arcu aliquam molestie.</span></a> <a href="#"><img src="images/slide2.jpg" width="920" height="360" alt="" /><span><big>Amet urna ornare euismodSed condimentum.</big><br />
-          Tusce nec iaculis risus hasellus nec sem sed tellus malesuada porttitor. Mauris scelerisque feugiat ante in vulputate. Nam sit amet ullamcorper tortor. Phasellus posuere facilisis cursus. Nunc est lorem, dictum at scelerisque sit amet, faucibus et est. Proin mattis ipsum quis arcu aliquam molestie.</span></a> <a href="#"><img src="images/slide3.jpg" width="920" height="360" alt="" /><span><big>Sed condimentum justo sit amet urna ornare euismod.</big><br />
-          Tusce nec iaculis risus hasellus nec sem sed tellus malesuada porttitor. Mauris scelerisque feugiat ante in vulputate. Nam sit amet ullamcorper tortor. Phasellus posuere facilisis cursus. Nunc est lorem, dictum at scelerisque sit amet, faucibus et est. Proin mattis ipsum quis arcu aliquam molestie.</span></a> </div>
+        <div id="coin-slider"> <a href="#"><img src="images/s.jpg" width="920" height="360" alt="" /><span><big>The only real security that a man can have in this world is a reserve of knowledge, experience and ability.</big><br /></span></a> 
+            <a href="#"><img src="images/s2_1.jpg" width="920" height="360" alt="" /><span><big>The opposite of security is insecurity, and the only way to overcome insecurity is to take risks.</big><br /></span></a>
+            <a href="#"><img src="images/s3.png" width="920" height="360" alt="" /><span><big>There is no real security except for whatever you build inside yourself.</big><br /></span></a> </div>
         <div class="clr"></div>
       </div>
       
@@ -54,4 +52,3 @@
 
   </div>
 </div>
-</body>

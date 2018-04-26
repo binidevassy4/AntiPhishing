@@ -101,15 +101,15 @@
          <form>       
               <table align="center" cellpadding="8" bgcolor="#00000" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
               <tr>
-                   <th>sl.no</th>
-                    <th>Branch name</th>
-                    <th>Contact no</th>
-                    <th>Email id</th>
+                   <th>SL.NO</th>
+                    <th>BRANCH NAME</th>
+                    <th>CONTACT NUMBER</th>
+                    <th>E-MAIL</th>
                    
-                    <th>Address</th>
-                    <th>Place</th>
-                    <th>Pin no</th> 
-                     <th>IFSC Code</th> 
+                    <th>ADDRESS</th>
+                    <th>PLACE</th>
+                    <th>PIN NUMBER</th> 
+                     <th>IFSC CODE</th> 
                 </tr>
                 
                 <%
@@ -146,22 +146,22 @@
             <table align="center" cellpadding="8">
                 <tr>
                    
-                    <td><input type="text" name="txtname" value="<%=bnamee%>" placeholder="        Branch Name" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                    <td><input type="text" name="txtname" value="<%=bnamee%>" required="" pattern="[A-Za-z]{8,10}" placeholder="        Branch Name" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     <input type="hidden" name="hid" value="<%=hhid%>" >
                     </td>
                 </tr>
                 <tr>
                     
-                    <td><input type="text" name="txtno" value="<%=conoo%>" placeholder="        Contact number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                    <td><input type="text" name="txtno" value="<%=conoo%>" required="" pattern="[0-9]{8,10}" placeholder="        Contact number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                 </tr>
                 <tr>
                     
-                    <td><input type="email" name="txtemail" value="<%=emaill%>" placeholder="        E-mail id" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                    <td><input type="email" name="txtemail" value="<%=emaill%>" required="" placeholder="        E-mail id" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                 </tr>
                
                 <tr>
                     
-                    <td><input type="text" name="txtadd" value="<%=address%>" placeholder="       Address" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                    <td><input type="text" name="txtadd" value="<%=address%>" required="" pattern="[A-Z a-z]{15,30}" placeholder="       Address" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                 </tr>
                 <tr>
                    
@@ -185,15 +185,15 @@
                 </tr>
                 <tr>
                    
-                    <td><input type="text" name="txtpin" value="<%=pinn%>"  placeholder="       Address" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                    <td><input type="text" name="txtpin" value="<%=pinn%>" required="" pattern="[0-9]{6}" placeholder="       Pin number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                 </tr>
                 <tr>
                    
-                    <td><input type="text" name="txtifsc" value="<%=ifscc%>"  placeholder="       Address" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
+                    <td><input type="text" name="txtifsc" value="<%=ifscc%>" required="" pattern="[A-Z a-z 0-9]{4,6}" placeholder="       IFSC code" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></td>
                 </tr>
                  <tr>
                     <td colspan="2" align="center">
-                                    <input type="submit" name="btnsubmit" value="Submit"  size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                        <input type="submit" name="btnsubmit" value="Submit"  size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">&nbsp;
                                     <input type="reset" name="btnreset" value="Cancel"  size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     </td>
                   </tr>

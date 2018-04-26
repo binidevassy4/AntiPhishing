@@ -5,14 +5,17 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<head>
-<title>SecureAnex</title>
-
 <%@include file="Header.jsp" %>
-</head>
+
+<html>
+    <head>
+      
+        <title>AntiPhishing::Branch home</title>
+  
+    </head>
+
 <body>
 
- 
   <div class="content">
     <div class="content_resize">
       <div class="mainbar">
@@ -44,38 +47,7 @@
         </div>
         <p class="pages"><small>Page 1 of 2</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
       </div>
-      <div class="sidebar">
-        
-        <div class="gadget">
-          
-          <div class="clr"></div>
-          <ul class="ex_menu">
-              <li><a href="BankDetails.jsp"><h2>Bank Details</h2></a><br />
-              </li>
-              <li><a href="BankProfileView.jsp"><h2>Profile</h2></a><br />
-              </li>
-              <li><a href="BankEditProfile.jsp"><h2>Edit Profile</h2></a><br />
-              </li>
-              <li><a href="Branch.jsp"><h2>Branches</h2></a><br />
-              </li>
-              <li><a href="District.jsp"><h2>District Details</h2></a><br />
-             </li>
-              <li><a href="place.jsp"><h2>Places</h2></a><br />
-              </li>
-              <li><a href="AccountTypes.jsp"><h2>Account Types</h2></a><br />
-              </li>
-              <li><a href="Cardtype.jsp"><h2>Card Types</h2></</a><br />
-              </li>
-              <li><a href="CardDetails.jsp"><h2>Card Details</h2></a><br />
-              </li>
-              <li><a href="Billtypes.jsp"><h2>Bill Types</h2></a><br />
-              </li>
-              <li><a href="IntrestRate.jsp"><h2>Intrest Rate</h2></a><br />
-              </li>
-              
-          </ul>
-        </div>
-      </div>
+     <%@include file="Slider.jsp" %>
       <div class="clr"></div>
     </div>
   </div>

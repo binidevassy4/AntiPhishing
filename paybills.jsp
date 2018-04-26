@@ -34,16 +34,25 @@
 
 
         %>
+         <%@include file="Header.jsp" %>
+        <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>Pay</span> Bills</h2>
+          <br /><br /><br />
+        
         <form  name="frmpaybill">
-            <table align="center">
+            <table align="center" cellpadding="12">
                 <tr>
-                    <td>Select the bill : </td>
+                    
                     <td>
-                        <select  name="selcate" >
-                            <option>---select category---</option>
+                        <select  name="selcate" required="" style="background-color:#fff; height:50px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" >
+                            <option>---Select Bill Category---</option>
                             <%                           String dis = "select * from tbl_billtype";
                                 ResultSet rsl = obj.selectCommand(dis);
-                                while (rsl.next()) {
+                                while (rsl.next())
+                                {
                                     String id = rsl.getString("billtype_id");
                             %>
                             <option value="<%=rsl.getString("billtype_id")%>"><%=rsl.getString("billtype_name")%></option>
@@ -57,18 +66,13 @@
                 </tr>
                 <tr>
                     <td>
-                        Enter bill Amount :
-                    </td>
-                    <td>
-                        <input type="number" value="" name="txtamt">
+                        <input type="number" value="" name="txtamt" required="" pattern="[0-9]{2,5}"  title="amount shuold below 100000" placeholder="             Enter Bill Amount" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" >
                     </td>
                 </tr>
                 <tr>
+                   
                     <td>
-                        Enter the Bill number :
-                    </td>
-                    <td>
-                        <input type="text" name="billno" value="" >
+                        <input type="text" name="billno" value="" required="" pattern="[a-z0-9]{6,10}" placeholder="             Enter Bill Number" size="40" style="background-color:#fff;height:40px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" >
                     </td>
                 </tr>
                 
@@ -77,12 +81,18 @@
                 <input type="hidden" value="<%=date%>" name="txtdat">
                 </tr>
                 <tr><td colspan="2" align="center">
-                        <input type="submit" name="btnsubmit" value="Submit">
-                        <input type="reset" name="btnreset" value="Cancel">
+                        <input type="submit" name="btnsubmit" value="Submit"size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" >&nbsp;&nbsp;
+                        <input type="reset" name="btnreset" value="Cancel" size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" >
                     </td>
                 </tr>
             </table>
         </form>
-               
+       </div>
+      </div>
+             <%@include file="Slider.jsp" %>  
+    </div>
+        </div>
+            
+             <%@include file="Footer.jsp" %>          
     </body>
 </html>

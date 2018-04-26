@@ -76,11 +76,11 @@
                 </tr>
             <tr>
                 <td>Enter the start date</td>
-                <td><input type="datetime-local" name="txtsart" ></td>
+                <td><input type="date" name="txtsart" ></td>
             </tr>
              <tr>
                 <td>Enter the end date</td>
-                <td><input type="datetime-local" name="txtend" ></td>
+                <td><input type="date" name="txtend" ></td>
             </tr>
             
              <tr>

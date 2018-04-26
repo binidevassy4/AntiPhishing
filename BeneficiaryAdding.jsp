@@ -9,6 +9,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="obj" class="db.ConnectionClass"></jsp:useBean>
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -30,6 +31,15 @@
         }
         </script>
     <body>
+        <%@include file="Header.jsp" %>
+        <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>Add Payee</span> For easy fund transfer</h2>
+          <br /><br /><br />
+        
+        
         <%
             String Bid="";
             String Aid="";
@@ -43,14 +53,12 @@
         }        
         %>
         <form>
-        <table align="center" >
+        <table align="center" cellpadding="12">
             <tr>
+                
                 <td>
-                   Select Branch
-                </td>
-                <td>
-                    <select name="Branch" onchange="getaccounts(this.value)">
-                         <option>....Select Branch....</option>
+                    <select name="Branch" onchange="getaccounts(this.value)" style="background-color:#fff; height:50px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                        <option>&nbsp;&nbsp;&nbsp;....Select Branch....</option>
                     <%
                     String sel="select * from tbl_branch";
                    ResultSet rs=obj.selectCommand(sel);
@@ -67,19 +75,17 @@
                 </td>
             </tr>
             <tr>
+                
                 <td>
-                    Accounts
-                </td>
-                <td>
-                    <select name="acounts" id="dis">
-                    <option value="sel">........Select..........</option>
+                    <select name="acounts" id="dis" style="background-color:#fff; height:50px; width:300px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                        <option value="sel">&nbsp;&nbsp;&nbsp;........Select..........</option>
                         
                     </select>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <input type="submit" value="Add Benificiary" name="btnsubmit">     
+                <td colspan="2" align="center">
+                    <input type="submit" value="Add Benificiary" name="btnsubmit" size="40" style="background-color:#fff;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">     
                 </td>
             </tr>
         </table>             
@@ -88,14 +94,14 @@
         
         
         <form name="frmview">
-            <table align="center" border="1">
+            <table align="center" cellpadding="8" bgcolor="#fff" width="100%" style="border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
                 <tr>
-                    <td>Sl.no</td>
-                    <td>Account Number</td>
-                    <td>Account holder name</td>
-                    <td>Email id</td>
-                    <td>Contact no</td>
-                    <td>Account type</td>
+                    <th>SL.NO</th>
+                    <th>ACCOUNT NUMBER</th>
+                    <th>ACCOUNT HOLDER NAME</th>
+                    <th>EMAIL-ID</th>
+                    <th>CONTACT NO</th>
+                    
                    
                     
                 </tr>
@@ -109,12 +115,12 @@
                  
              %>
              <tr>
-                <td><%=i%></td>
-                <td><%=rsc.getString("accounts_no")%></td>
-                <td><%=rsc.getString("Customer_name")%></td>
-                <td><%=rsc.getString("Customer_email")%></td>
-                <td><%=rsc.getString("Customer_conact")%></td>
-                <td><%=rsc.getString("accounttype_name")%></td>
+                <td align="center"><%=i%></td>
+                <td align="center"><%=rsc.getString("accounts_no")%></td>
+                <td align="center"><%=rsc.getString("Customer_name")%></td>
+                <td align="center"><%=rsc.getString("Customer_email")%></td>
+                <td align="center"><%=rsc.getString("Customer_conact")%></td>
+                
                   
              </tr>
             <%
@@ -124,5 +130,13 @@
                 
             </table>   
         </form>
+           
+        </div>
+      </div>
+             <%@include file="Slider.jsp" %>  
+    </div>
+        </div>
+            
+             <%@include file="Footer.jsp" %>  
     </body>
 </html>
